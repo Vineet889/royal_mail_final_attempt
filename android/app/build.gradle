@@ -25,7 +25,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace = "com.example.royal_mail_final_attempt"
-    compileSdk = flutter.compileSdkVersion
+    compileSdkVersion = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -38,8 +38,8 @@ android {
         applicationId = "com.example.royal_mail_final_attempt"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
@@ -51,6 +51,11 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.webkit:webkit:1.6.1"
 }
 
 flutter {
